@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>우리의 첫 번째 기념일 ♡ | Fadlhlin & Donghee</title>
+<meta name="description" content="A little anniversary story for 동희, from Fadlhlin ♡">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Gaegu:wght@400;700&family=Gowun+Dodum&family=Playfair+Display:wght@500;600&display=swap');
+
+:root{
+  --pink:#f7b8ca;
+  --deep:#b94d72;
+  --rose:#e98da9;
+  --cream:#fff8f5;
+  --paper:#fffdfb;
+  --ink:#5b3d47;
+  --soft:#fde4eb;
+  --line:rgba(185,77,114,.18);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  color:var(--ink);
+  background:var(--cream);
+  font-family:'Gowun Dodum',sans-serif;
+  overflow-x:hidden;
+}
+button{font:inherit}
+a{color:inherit}
+.section{
+  min-height:100vh;
+  position:relative;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:90px 20px;
+  overflow:hidden;
+}
+.container{width:min(980px,100%);margin:auto;position:relative;z-index:2}
+.korean{font-family:'Gowun Dodum',sans-serif}
+.script{font-family:'Gaegu',cursive}
+.serif{font-family:'Playfair Display',serif}
+.center{text-align:center}
+.eyebrow{
+  letter-spacing:.18em;
+  text-transform:uppercase;
+  font-size:.75rem;
+  color:var(--deep);
+  margin-bottom:12px;
+}
+h1,h2,h3,p{margin-top:0}
+h2{
+  font-size:clamp(2.1rem,7vw,4rem);
+  line-height:1.05;
+  margin-bottom:18px;
+}
+.sub{
+  color:#8d6874;
+  line-height:1.9;
+  max-width:650px;
+  margin:0 auto;
+}
+.btn{
+  border:0;
+  cursor:pointer;
+  padding:14px 24px;
+  border-radius:999px;
+  color:white;
+  background:linear-gradient(135deg,var(--rose),var(--deep));
+  box-shadow:0 12px 28px rgba(185,77,114,.22);
+  transition:.25s;
+}
+.btn:hover{transform:translateY(-3px);box-shadow:0 16px 32px rgba(185,77,114,.28)}
+.btn.ghost{
+  color:var(--deep);
+  background:rgba(255,255,255,.7);
+  border:1px solid var(--line);
+  box-shadow:none;
+}
+
+/* floating background */
+.bubble{
+  position:absolute;
+  border-radius:50%;
+  background:rgba(255,255,255,.45);
+  filter:blur(1px);
+  animation:float 8s ease-in-out infinite;
+}
+.b1{width:160px;height:160px;left:-40px;top:15%}
+.b2{width:90px;height:90px;right:8%;top:22%;animation-delay:1s}
+.b3{width:220px;height:220px;right:-80px;bottom:5%;animation-delay:2s}
+@keyframes float{50%{transform:translateY(-25px) translateX(12px)}}
+
+/* music */
+.music{
+  position:fixed;right:18px;bottom:18px;z-index:1000;
+  display:flex;align-items:center;gap:8px;
+  background:rgba(255,255,255,.86);
+  backdrop-filter:blur(12px);
+  border:1px solid var(--line);
+  border-radius:999px;padding:7px 10px 7px 7px;
+  box-shadow:0 10px 28px rgba(100,40,60,.13);
+}
+.music button{
+  width:42px;height:42px;border:0;border-radius:50%;
+  background:var(--deep);color:white;cursor:pointer;
+}
+.music span{font-size:.76rem;color:var(--deep);padding-right:5px}
+#ytPlayer{position:fixed;left:-10000px;top:-10000px;width:1px;height:1px}
+
+/* opening */
+#opening{
+  background:
+    radial-gradient(circle at 50% 40%,rgba(255,255,255,.75),transparent 35%),
+    linear-gradient(145deg,#ffeaf1,#f8c5d5 50%,#f5dce7);
+  text-align:center;
+}
+.opening-card{max-width:720px}
+.mini-heart{font-size:2rem;animation:pulse 1.8s infinite}
+@keyframes pulse{50%{transform:scale(1.2)}}
+.opening-title{
+  font-family:'Playfair Display',serif;
+  font-size:clamp(3rem,11vw,7rem);
+  line-height:.95;
+  margin:18px 0;
+  color:#9e4162;
+}
+.names{font-size:1.1rem;letter-spacing:.08em;color:#8f5a69}
+.date{margin:22px 0 30px;color:#a66a7c}
+.open-note{font-family:'Gaegu',cursive;font-size:1.45rem;margin-bottom:22px}
+.scroll-hint{margin-top:45px;font-size:.8rem;color:#9f7080;animation:bob 2s infinite}
+@keyframes bob{50%{transform:translateY(6px)}}
+
+/* numbers */
+#days{background:linear-gradient(#fff8f5,#fff0f4)}
+.number-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:45px}
+.number-card{
+  padding:28px 12px;border-radius:28px;background:rgba(255,255,255,.72);
+  border:1px solid var(--line);box-shadow:0 12px 30px rgba(130,60,80,.07);
+}
+.number{font-family:'Playfair Display',serif;font-size:clamp(2.2rem,7vw,4.4rem);color:var(--deep)}
+.number-label{font-size:.82rem;color:#9a7480}
+.days-note{margin:40px auto 0;font-family:'Gaegu',cursive;font-size:1.6rem}
+
+/* distance */
+#distance{background:#fce8ee}
+.route{margin:45px auto 35px;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:18px;max-width:820px}
+.place{
+  background:rgba(255,255,255,.72);border:1px solid var(--line);border-radius:30px;
+  padding:28px 12px;
+}
+.flag{font-size:3rem}
+.place strong{display:block;font-size:1.3rem;margin-top:8px}
+.place small{color:#a36d7d}
+.route-line{height:2px;background:linear-gradient(90deg,var(--rose),var(--deep));position:relative}
+.travel-heart{
+  position:absolute;left:0;top:50%;transform:translate(-50%,-50%);
+  font-size:1.6rem;animation:travel 4s ease-in-out infinite;
+}
+@keyframes travel{50%{left:100%}}
+.distance-quote{font-family:'Gaegu',cursive;font-size:2rem;color:#9e506d}
+
+/* cards */
+#love{background:#fff9f7}
+.cards{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin-top:45px}
+.flip{perspective:1000px;height:220px;cursor:pointer}
+.flip-inner{position:relative;width:100%;height:100%;transition:.7s;transform-style:preserve-3d}
+.flip.open .flip-inner{transform:rotateY(180deg)}
+.face{
+  position:absolute;inset:0;backface-visibility:hidden;border-radius:28px;
+  border:1px solid var(--line);padding:28px;
+  display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;
+  box-shadow:0 12px 30px rgba(130,60,80,.07);
+}
+.front{background:linear-gradient(145deg,#fff,#fde7ee)}
+.back{background:#f9cbd8;transform:rotateY(180deg);color:#754353}
+.card-num{font-size:.8rem;color:var(--deep);letter-spacing:.15em}
+.card-title{font-size:1.35rem;margin:10px 0}
+.card-hint{font-size:.75rem;color:#ad7c8a}
+
+/* compliments */
+#compliments{background:linear-gradient(145deg,#f8d9e4,#fff3f5)}
+.compliment-box{
+  max-width:700px;margin:40px auto 0;min-height:240px;padding:35px;
+  background:rgba(255,255,255,.7);border:1px solid var(--line);
+  border-radius:36px;display:flex;flex-direction:column;align-items:center;justify-content:center;
+  box-shadow:0 20px 50px rgba(120,50,75,.08);
+}
+.compliment{font-family:'Gaegu',cursive;font-size:clamp(2rem,7vw,3.6rem);line-height:1.05;color:#9f4263;margin-bottom:25px}
+.counter{font-size:.72rem;color:#ad7786;margin-top:12px}
+
+/* letter */
+#letter{background:#f6dfe6;min-height:110vh}
+.envelope-wrap{display:flex;justify-content:center;margin-top:40px}
+.envelope{
+  position:relative;width:min(520px,92vw);height:330px;cursor:pointer;
+  filter:drop-shadow(0 18px 25px rgba(90,40,60,.16));
+}
+.env-body{position:absolute;inset:0;background:#f9c9d7;border-radius:18px;overflow:hidden}
+.env-body:before,.env-body:after{
+  content:"";position:absolute;bottom:0;width:0;height:0;border-style:solid;z-index:2
+}
+.env-body:before{left:0;border-width:0 0 190px 260px;border-color:transparent transparent #f3b5c9 transparent}
+.env-body:after{right:0;border-width:0 260px 190px 0;border-color:transparent transparent #f0afc4 transparent}
+.flap{
+  position:absolute;left:0;top:0;width:0;height:0;z-index:4;
+  border-left:260px solid transparent;border-right:260px solid transparent;border-top:150px solid #eaa0b8;
+  transform-origin:top center;transition:1s;
+}
+.envelope.open .flap{transform:rotateX(180deg);z-index:1}
+.seal{
+  position:absolute;z-index:5;left:50%;top:45%;transform:translate(-50%,-50%);
+  width:66px;height:66px;border-radius:50%;background:#b94d72;color:white;
+  display:grid;place-items:center;font-size:1.4rem;transition:.5s
+}
+.envelope.open .seal{opacity:0;pointer-events:none}
+.env-label{
+  position:absolute;z-index:6;left:50%;top:65%;transform:translate(-50%,-50%);
+  text-align:center;color:#7d4053;font-family:'Gaegu',cursive;font-size:1.55rem;width:100%
+}
+
+/* letter modal/paper */
+.letter-overlay{
+  position:fixed;inset:0;z-index:1100;background:rgba(74,35,48,.45);
+  backdrop-filter:blur(8px);display:none;align-items:center;justify-content:center;padding:18px;
+}
+.letter-overlay.show{display:flex}
+.paper{
+  width:min(720px,96vw);max-height:88vh;overflow:auto;background:#fffdf8;
+  border-radius:18px;padding:45px clamp(24px,7vw,65px);position:relative;
+  box-shadow:0 30px 80px rgba(50,20,30,.25);
+  background-image:linear-gradient(rgba(185,77,114,.06) 1px,transparent 1px);
+  background-size:100% 32px;
+}
+.paper h3{font-family:'Gaegu',cursive;font-size:2.2rem;color:var(--deep)}
+.paper p{font-size:1rem;line-height:2.05;margin:0 0 18px}
+.close-letter{position:absolute;right:16px;top:14px;border:0;background:#f8d9e2;color:var(--deep);border-radius:50%;width:40px;height:40px;cursor:pointer}
+.signature{font-family:'Gaegu',cursive;font-size:1.7rem;text-align:right;color:var(--deep);margin-top:28px}
+
+/* ending */
+#ending{
+  background:radial-gradient(circle at center,#493042 0%,#281d2b 72%);
+  color:#fff3f6;text-align:center;min-height:100vh;
+}
+#ending .eyebrow{color:#f5b4c8}
+.stars{position:absolute;inset:0;overflow:hidden}
+.star{position:absolute;color:#fff;opacity:.75;animation:twinkle 2.5s infinite}
+@keyframes twinkle{50%{opacity:.2;transform:scale(.7)}}
+.ending-title{font-family:'Playfair Display',serif;font-size:clamp(2.7rem,9vw,6rem);line-height:1.05}
+.ending-korean{font-size:1.5rem;line-height:2;color:#ffd9e4}
+.end-small{color:#d6aebc;line-height:1.9;max-width:600px;margin:25px auto}
+.forever{font-family:'Gaegu',cursive;font-size:2rem;margin:30px 0;color:#f5b4c8}
+
+/* reveal */
+.reveal{opacity:0;transform:translateY(35px);transition:1s ease}
+.reveal.visible{opacity:1;transform:none}
+
+@media(max-width:700px){
+  .section{padding:80px 16px}
+  .number-grid{grid-template-columns:1fr;gap:10px}
+  .number-card{padding:18px}
+  .cards{grid-template-columns:1fr}
+  .route{grid-template-columns:1fr;gap:10px}
+  .route-line{height:60px;width:2px;margin:auto;background:linear-gradient(180deg,var(--rose),var(--deep))}
+  .travel-heart{top:0;left:50%;animation:travelV 4s ease-in-out infinite}
+  @keyframes travelV{50%{top:100%}}
+  .envelope{height:270px}
+  .flap{border-left-width:46vw;border-right-width:46vw;border-top-width:125px}
+  .env-body:before{border-width:0 0 155px 46vw}
+  .env-body:after{border-width:0 46vw 155px 0}
+}
+</style>
+</head>
+<body>
+
+<!-- Music is intentionally started after the visitor presses the opening button,
+     because modern browsers normally block autoplay with sound. -->
+<div id="ytPlayer"></div>
+<div class="music" aria-label="Music controls">
+  <button id="musicBtn" title="Play / pause music">♪</button>
+  <span id="musicText">music paused</span>
+</div>
+
+<section class="section" id="opening">
+  <div class="bubble b1"></div><div class="bubble b2"></div><div class="bubble b3"></div>
+  <div class="container opening-card reveal visible">
+    <div class="mini-heart">♡</div>
+    <div class="eyebrow">12 · 08 · 2025 — 12 · 08 · 2026</div>
+    <div class="opening-title">Our First<br>Anniversary</div>
+    <div class="names">FADLHLIN &nbsp;♡&nbsp; 동희</div>
+    <div class="date korean">우리의 첫 번째 기념일</div>
+    <div class="open-note">A little story for my 자기야...</div>
+    <button class="btn" id="openStory">우리의 이야기 열기 ♡</button>
+    <div class="scroll-hint">↓ &nbsp; scroll with me &nbsp; ↓</div>
+  </div>
+</section>
+
+<section class="section" id="days">
+  <div class="container center reveal">
+    <div class="eyebrow">One year of us</div>
+    <h2>365 days with you ♡</h2>
+    <p class="sub">Even though we couldn't spend this anniversary side by side, every day with you has still felt special.</p>
+    <div class="number-grid">
+      <div class="number-card"><div class="number">365</div><div class="number-label">DAYS</div></div>
+      <div class="number-card"><div class="number">8,760</div><div class="number-label">HOURS</div></div>
+      <div class="number-card"><div class="number">∞</div><div class="number-label">LITTLE MOMENTS</div></div>
+    </div>
+    <div class="days-note">“And somehow, I still want more time with you.”</div>
+  </div>
+</section>
+
+<section class="section" id="distance">
+  <div class="container center reveal">
+    <div class="eyebrow">Different countries, same heart</div>
+    <h2>멀리 있어도, 마음은 가까이.</h2>
+    <p class="sub">Right now, Malaysia and Korea are between us. But distance has never made me feel less loved by you.</p>
+    <div class="route">
+      <div class="place"><div class="flag">🇲🇾</div><strong>Fadlhlin</strong><small>Malaysia</small></div>
+      <div class="route-line"><span class="travel-heart">♡</span></div>
+      <div class="place"><div class="flag">🇰🇷</div><strong>Donghee</strong><small>Korea</small></div>
+    </div>
+    <div class="distance-quote">2 countries · 1 love · still us ♡</div>
+  </div>
+</section>
+
+<section class="section" id="love">
+  <div class="container center reveal">
+    <div class="eyebrow">Tap the little cards</div>
+    <h2>Things I love about you</h2>
+    <p class="sub">There are so many, but here are a few of the reasons you feel like home to me.</p>
+    <div class="cards">
+      <div class="flip"><div class="flip-inner">
+        <div class="face front"><div class="card-num">01</div><div class="card-title">You always listen.</div><div class="card-hint">tap ♡</div></div>
+        <div class="face back"><div class="card-title">내 이야기를 언제나 들어줘서 고마워.</div><p>Whatever I have to say, you make me feel heard.</p></div>
+      </div></div>
+      <div class="flip"><div class="flip-inner">
+        <div class="face front"><div class="card-num">02</div><div class="card-title">You make me calm.</div><div class="card-hint">tap ♡</div></div>
+        <div class="face back"><div class="card-title">네가 있으면 마음이 편안해져.</div><p>Just having you there makes everything feel a little softer.</p></div>
+      </div></div>
+      <div class="flip"><div class="flip-inner">
+        <div class="face front"><div class="card-num">03</div><div class="card-title">You make me happy.</div><div class="card-hint">tap ♡</div></div>
+        <div class="face back"><div class="card-title">나를 웃게 해주는 사람.</div><p>Thank you for filling ordinary days with little smiles.</p></div>
+      </div></div>
+      <div class="flip"><div class="flip-inner">
+        <div class="face front"><div class="card-num">04</div><div class="card-title">You never stop loving me.</div><div class="card-hint">tap ♡</div></div>
+        <div class="face back"><div class="card-title">항상 한결같이 사랑해줘서 고마워.</div><p>Even from far away, I always feel your love.</p></div>
+      </div></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="compliments">
+  <div class="container center reveal">
+    <div class="eyebrow">For your 이뿌니</div>
+    <h2>You always call me pretty 🎀</h2>
+    <p class="sub">You really never miss a day. So I made a tiny collection of compliments just for us.</p>
+    <div class="compliment-box">
+      <div class="compliment" id="compliment">오늘도 우리 이뿌니가 제일 예뻐 ♡</div>
+      <button class="btn" id="complimentBtn">오늘도 말해줘 ♡</button>
+      <div class="counter" id="counter">compliment 1</div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="letter">
+  <div class="container center reveal">
+    <div class="eyebrow">A letter I wish I could hand to you</div>
+    <h2>자기야에게 💌</h2>
+    <p class="sub">I couldn't be beside you today, so I put all the words I wish I could whisper to you here instead.</p>
+    <div class="envelope-wrap">
+      <div class="envelope" id="envelope" role="button" tabindex="0" aria-label="Open letter">
+        <div class="env-body"></div>
+        <div class="flap"></div>
+        <div class="seal">♡</div>
+        <div class="env-label">click to open<br>우리 자기야에게</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="ending">
+  <div class="stars" id="stars"></div>
+  <div class="container center reveal">
+    <div class="eyebrow">Until we can finally meet</div>
+    <div class="ending-title">One year down,<br>so many more to go.</div>
+    <div class="ending-korean">
+      다음 기념일에는<br>
+      꼭 서로의 옆에 있자.
+    </div>
+    <div class="end-small">
+      Next anniversary, I hope I can say all of this while holding your hand.
+      Until then, let's keep choosing each other, one ordinary day at a time.
+    </div>
+    <div class="forever">사랑해, 자기야. ♡</div>
+    <button class="btn ghost" id="restart">처음부터 다시 보기 ↻</button>
+  </div>
+</section>
+
+<div class="letter-overlay" id="letterOverlay">
+  <article class="paper">
+    <button class="close-letter" id="closeLetter" aria-label="Close letter">×</button>
+    <h3>자기야에게 ♡</h3>
+
+    <p>자기야, 우리 벌써 1년이 됐네.</p>
+    <p>2025년 8월 12일, 우리가 시작한 그날부터 어느새 1년이라는 시간이 흘렀어.</p>
+    <p>처음에는 1년이라는 시간이 이렇게 빨리 올 줄 몰랐는데, 지금 생각해보면 그동안 참 많은 순간들이 있었던 것 같아.</p>
+
+    <p>그리고 오늘은 조금 슬프기도 해.</p>
+    <p>우리의 첫 번째 기념일인데 서로 가까이에서 축하해주지 못한다는 게 조금 아쉬워.</p>
+    <p>나는 말레이시아에 있고, 자기는 한국에 있고. 화면을 사이에 두고 사랑한다고 말하는 것보다 오늘만큼은 정말 네 앞에 가서 직접 말해주고 싶었어.</p>
+
+    <p>그리고 만약 지금 자기가 내 앞에 있다면 아무 말도 안 하고 그냥 꼭 안아줄 것 같아.</p>
+    <p>정말 세게. 한참 동안 놓지 않고. 보고 싶었다고, 너무 보고 싶었다고 그동안 못 했던 말을 다 말하면서.</p>
+
+    <p>멀리 떨어져 있어도 자기의 사랑이 변하지 않았다는 걸 나는 항상 느껴.</p>
+    <p>내가 어떤 이야기를 해도 이해해주고, 내 이야기를 들어주고, 내가 힘들 때 옆에 있어주고, 같이 시간을 보내주고, 나를 웃게 해주고, 불안할 때는 나를 편하게 해주고.</p>
+
+    <p>무엇보다 자기랑 함께 있을 때 나는 정말 사랑받고 있다는 느낌이 들어. 그게 나한테는 정말 소중해.</p>
+
+    <p>그리고 자기는 매일 나한테 예쁘다고 해주잖아. 정말 하루도 빼먹지 않고.</p>
+    <p>가끔은 “또 예쁘다고 하네 ㅋㅋ” 하면서 웃기도 하지만 사실 나는 그 말이 정말 좋아. 자기가 나를 그렇게 봐준다는 게 너무 고맙고, 그 말을 들을 때마다 내가 사랑받고 있다는 걸 느껴.</p>
+
+    <p>그래서 나도 자기한테 말해주고 싶어.</p>
+    <p><strong>자기야, 나도 자기를 정말 많이 사랑해.</strong></p>
+
+    <p>멀리 있어서 보고 싶은 날도 많고, 가끔은 그냥 옆에 있었으면 좋겠다고 생각하는 날도 있지만 나는 우리가 결국 만날 거라는 걸 알고 있어.</p>
+    <p>지금은 서로 다른 나라에 있지만 이 거리는 영원하지 않을 거니까.</p>
+
+    <p>언젠가는 화면으로만 보던 얼굴을 내 눈앞에서 보고, 전화로만 듣던 목소리를 바로 옆에서 듣고, 매일 상상만 하던 그 포옹을 정말 할 수 있겠지.</p>
+
+    <p>그날이 오면 그동안 보고 싶었던 만큼 자기를 꼭 안아줄게.</p>
+    <p>그리고 아마 한참 동안 안 놔줄 거야. 🤍</p>
+
+    <p>자기가 내 곁에 있어줘서 고마워.</p>
+    <p>항상 나를 이해해줘서 고맙고, 내 이야기를 들어줘서 고맙고, 나를 웃게 해줘서 고맙고, 매일 나에게 사랑을 느끼게 해줘서 고마워.</p>
+
+    <p><strong>그리고 무엇보다, 나를 사랑해줘서 고마워.</strong></p>
+
+    <p>우리의 첫 번째 기념일을 같이 보낼 수는 없지만, 마음만큼은 오늘도 자기 바로 옆에 있을게.</p>
+
+    <p><strong>Happy 1st Anniversary, 자기야. ♡</strong></p>
+
+    <p>우리에게는 아직 함께 만들어갈 날들이 훨씬 더 많으니까.</p>
+    <p>오늘의 우리는 1년이지만, 나는 앞으로의 우리를 더 기대하고 있어.</p>
+
+    <p>한국과 말레이시아 사이의 이 거리도 언젠가는 우리에게 그저 하나의 추억이 되겠지.</p>
+    <p>그때까지 조금만 더 힘내자.</p>
+
+    <p>그리고 그날이 오면, 내가 제일 먼저 할 일은 자기를 꼭 안아주는 거야.</p>
+
+    <p><strong>사랑해, 자기야.</strong></p>
+    <p>그리고... <strong>항상 고마워.</strong></p>
+
+    <div class="signature">— 너의 이뿌니, Fadlhlin ♡</div>
+  </article>
+</div>
+
+<script>
+/* ---------------------------
+   YouTube music
+---------------------------- */
+const YT_VIDEO_ID = "y_osBclFbuc";
+let player, playerReady = false, musicStarted = false;
+
+function onYouTubeIframeAPIReady(){
+  player = new YT.Player('ytPlayer',{
+    videoId: YT_VIDEO_ID,
+    playerVars:{
+      autoplay:0,
+      controls:0,
+      loop:1,
+      playlist:YT_VIDEO_ID,
+      playsinline:1,
+      rel:0
+    },
+    events:{
+      onReady:()=>{ playerReady=true; updateMusicUI(false); },
+      onStateChange:(e)=>{
+        if(window.YT && e.data === YT.PlayerState.PLAYING) updateMusicUI(true);
+        if(window.YT && e.data === YT.PlayerState.PAUSED) updateMusicUI(false);
+      }
+    }
+  });
+}
+function startMusic(){
+  if(!playerReady) return;
+  player.unMute();
+  player.setVolume(55);
+  player.playVideo();
+  musicStarted=true;
+  updateMusicUI(true);
+}
+function toggleMusic(){
+  if(!playerReady) return;
+  const state=player.getPlayerState();
+  if(state===YT.PlayerState.PLAYING) player.pauseVideo();
+  else { player.unMute(); player.playVideo(); }
+}
+function updateMusicUI(playing){
+  document.getElementById('musicText').textContent=playing ? "music playing ♡" : "music paused";
+  document.getElementById('musicBtn').textContent=playing ? "Ⅱ" : "♪";
+}
+document.getElementById('musicBtn').addEventListener('click',toggleMusic);
+
+const tag=document.createElement('script');
+tag.src="https://www.youtube.com/iframe_api";
+document.head.appendChild(tag);
+
+/* ---------------------------
+   Opening + smooth scroll
+---------------------------- */
+document.getElementById('openStory').addEventListener('click',()=>{
+  startMusic();
+  document.getElementById('days').scrollIntoView({behavior:'smooth'});
+});
+
+/* ---------------------------
+   Reveal animations
+---------------------------- */
+const observer=new IntersectionObserver(entries=>{
+  entries.forEach(entry=>{
+    if(entry.isIntersecting) entry.target.classList.add('visible');
+  });
+},{threshold:.14});
+document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+
+/* ---------------------------
+   Flip cards
+---------------------------- */
+document.querySelectorAll('.flip').forEach(card=>{
+  card.addEventListener('click',()=>card.classList.toggle('open'));
+});
+
+/* ---------------------------
+   Compliments
+---------------------------- */
+const compliments=[
+  "오늘도 우리 이뿌니가 제일 예뻐 ♡",
+  "이뿌니는 오늘도 너무 예쁘네.",
+  "내 눈에는 네가 제일 예뻐.",
+  "우리 이뿌니, 오늘도 예쁘고 사랑스러워 ♡",
+  "자기가 웃을 때가 제일 좋아.",
+  "오늘도 예쁜 이뿌니 많이 사랑해.",
+  "언제 봐도 예쁜 내 이뿌니 ♡",
+  "내가 제일 좋아하는 사람 = 이뿌니."
+];
+let complimentIndex=0;
+document.getElementById('complimentBtn').addEventListener('click',()=>{
+  complimentIndex=(complimentIndex+1)%compliments.length;
+  const el=document.getElementById('compliment');
+  el.style.opacity=0;
+  setTimeout(()=>{
+    el.textContent=compliments[complimentIndex];
+    el.style.opacity=1;
+    document.getElementById('counter').textContent=`compliment ${complimentIndex+1} / ${compliments.length}`;
+  },180);
+});
+
+/* ---------------------------
+   Envelope + letter
+---------------------------- */
+const envelope=document.getElementById('envelope');
+const overlay=document.getElementById('letterOverlay');
+function openLetter(){
+  envelope.classList.add('open');
+  setTimeout(()=>overlay.classList.add('show'),650);
+}
+envelope.addEventListener('click',openLetter);
+envelope.addEventListener('keydown',e=>{
+  if(e.key==="Enter" || e.key===" "){e.preventDefault();openLetter();}
+});
+document.getElementById('closeLetter').addEventListener('click',()=>overlay.classList.remove('show'));
+overlay.addEventListener('click',e=>{if(e.target===overlay) overlay.classList.remove('show')});
+document.addEventListener('keydown',e=>{if(e.key==="Escape") overlay.classList.remove('show')});
+
+/* ---------------------------
+   Stars
+---------------------------- */
+const stars=document.getElementById('stars');
+for(let i=0;i<55;i++){
+  const s=document.createElement('span');
+  s.className='star';
+  s.textContent=Math.random()>.82 ? '♡' : '✦';
+  s.style.left=(Math.random()*100)+'%';
+  s.style.top=(Math.random()*100)+'%';
+  s.style.fontSize=(8+Math.random()*12)+'px';
+  s.style.animationDelay=(Math.random()*3)+'s';
+  stars.appendChild(s);
+}
+
+/* ---------------------------
+   Restart
+---------------------------- */
+document.getElementById('restart').addEventListener('click',()=>{
+  window.scrollTo({top:0,behavior:'smooth'});
+});
+
+/* subtle changing browser title */
+let titleTimer;
+document.addEventListener('visibilitychange',()=>{
+  if(document.hidden){
+    titleTimer=setInterval(()=>document.title=document.title==="♡ 자기야 ♡"?"I miss you ♡":"♡ 자기야 ♡",1400);
+  }else{
+    clearInterval(titleTimer);
+    document.title="우리의 첫 번째 기념일 ♡ | Fadlhlin & Donghee";
+  }
+});
+</script>
+</body>
+</html>
